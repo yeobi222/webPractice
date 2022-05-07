@@ -26,6 +26,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX67X5B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<input type="button" value="2night" onclick="
+if(document.querySelector('body').dataset.mode === 'day'){
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';
+  document.querySelector('body').dataset.mode = 'night';
+  this.value = '2day';
+} else {
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';
+  document.querySelector('body').dataset.mode = 'day';
+  this.value = '2night'
+}
+">
   <h1><a href="index.html" title="인덱스">web</a></h1>
   <div id="grid">
     <ol> <!--orderlist. 번호 매긴 목차-->
