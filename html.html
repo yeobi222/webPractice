@@ -27,22 +27,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TX67X5B"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<input type="button" value="2night" onclick="
-if(document.querySelector('body').dataset.mode === 'day'){
-  document.querySelector('body').style.backgroundColor='black';
-  document.querySelector('body').style.color='white';
-  document.querySelector('body').dataset.mode = 'night';
-  this.value = '2day';
-} else {
-  document.querySelector('body').style.backgroundColor='white';
-  document.querySelector('body').style.color='black';
-  document.querySelector('body').dataset.mode = 'day';
-  this.value = '2night'
-}
-">
-  <h1><a href="index.html">web</a></h1>
+  <input id="daynight" type="button" value="2night" onclick="changeDN(this)">
+  <h1 id="top"><a href="index.html">web</a></h1>
   <div id="grid">
-    <ol> <!--orderlist. 번호 매긴 목차-->
+    <ol id="list"> <!--orderlist. 번호 매긴 목차-->
       <li><a href="html.html">HTML</a></li>
       <li><a href="css.html">CSS</a><br></li>
       <li><a href="JS.html">JS</a><br></li>
@@ -82,5 +70,42 @@ if(document.querySelector('body').dataset.mode === 'day'){
       })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <script>
+  function changeDN(self) {
+    var dntarget = document.querySelector('body');
+    if(self.value === '2night'){
+
+      var textColor = 'white'
+      dntarget.style.backgroundColor='black';
+      dntarget.style.color= textColor;
+      changeStyle('list', textColor);
+      changeStyle('top', textColor);
+      var links = document.querySelectorAll('a');
+      var i = 0;
+      while(i<links.length){
+        links[i].style.color='skyblue';
+        i = i + 1;
+      }
+      self.value = '2day';
+    } else {
+      var textColor = 'black'
+      dntarget.style.backgroundColor='white';
+      dntarget.style.color=textColor;
+      changeStyle('list', textColor);
+      changeStyle('top', textColor);
+      var links = document.querySelectorAll('a');
+      var i = 0;
+      while(i<links.length){
+        links[i].style.color='blue';
+        i = i + 1;
+      }
+      self.value = '2night'
+    }
+  }
+  function changeStyle(idnm, tc){
+    var element = document.getElementById(idnm);
+    element.style.borderColor = tc;
+  }
+  </script>
 </body>
 </html>
