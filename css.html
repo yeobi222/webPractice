@@ -2,21 +2,11 @@
 <html>
 <head> <!--본문에 드러나지 않는 페이지의 속성 -->
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TX67X5B');</script>
-<!-- End Google Tag Manager -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FFW3H1JR9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4FFW3H1JR9');
-</script>
+  <script src='GTM.js'></script>
+  <!-- End Google Tag Manager -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FFW3H1JR9"></script>
+  <script src='GA.js'></script>
   <title>WEB - css</title>
   <meta charset="utf-8"> <!-- 문서가 utf-8로 인코딩되었음을 알림 -->
   <link rel="stylesheet" href="/web/style.css">
@@ -51,41 +41,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
   </div>
-  <script>
-  function changeDN(self) {
-    var dntarget = document.querySelector('body');
-    if(self.value === '2night'){
-
-      var textColor = 'white'
-      dntarget.style.backgroundColor='black';
-      dntarget.style.color= textColor;
-      changeStyle('list', textColor);
-      changeStyle('top', textColor);
-      var links = document.querySelectorAll('a');
-      var i = 0;
-      while(i<links.length){
-        links[i].style.color='skyblue';
-        i = i + 1;
-      }
-      self.value = '2day';
-    } else {
-      var textColor = 'black'
-      dntarget.style.backgroundColor='white';
-      dntarget.style.color=textColor;
-      changeStyle('list', textColor);
-      changeStyle('top', textColor);
-      var links = document.querySelectorAll('a');
-      var i = 0;
-      while(i<links.length){
-        links[i].style.color='blue';
-        i = i + 1;
-      }
-      self.value = '2night'
-    }
-  }
-  function changeStyle(idnm, tc){
-    var element = document.getElementById(idnm);
-    element.style.borderColor = tc;
-  }
-  </script>
+  <script src='daynight.js'></script>
 </body>
