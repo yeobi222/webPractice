@@ -13,6 +13,9 @@ function changeDN(self) {
     Body.setBackColor("black")
     changeStyle('list', textColor);
     changeStyle('top', textColor);
+    changeStyle('daynight', textColor);
+    document.getElementById('daynight').style.color = textColor;
+    document.getElementById('daynight').style.backgroundColor = "black";
     var links = document.querySelectorAll('a');
     var i = 0;
     while(i<links.length){
@@ -26,6 +29,9 @@ function changeDN(self) {
     Body.setBackColor("white")
     changeStyle('list', textColor);
     changeStyle('top', textColor);
+    changeStyle('daynight', textColor);
+    document.getElementById('daynight').style.color = textColor;
+    document.getElementById('daynight').style.backgroundColor = "white";
     var links = document.querySelectorAll('a');
     var i = 0;
     while(i<links.length){
